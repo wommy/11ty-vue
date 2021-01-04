@@ -15,7 +15,8 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 	eleventyConfig.addTransform("add-html-doctype", (content, outputPath) => {
-		let doctype = "<!doctype html>";
+		let doctype = `<!doctype html>
+`;
 		if(outputPath.endsWith(".html") && !content.trim().toLowerCase().startsWith(doctype)) {
 			return `${doctype}${content}`;
 		}
